@@ -2168,7 +2168,7 @@ INSERT INTO `usuario` (`id`, `login`, `password`, `id_tipousuario`, `id_estado`,
 CREATE TABLE IF NOT EXISTS `objeto` (
   `id` int(6) NOT NULL COMMENT 'ID Objeto',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -2181,7 +2181,7 @@ CREATE TABLE IF NOT EXISTS `operacion` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `id_objeto` int(6) NOT NULL COMMENT 'ID Objeto',
   `id_tipooperacion` int(6) NOT NULL COMMENT 'ID Tipo Operación'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
 -- --------------------------------------------------------
 
 --
@@ -2193,7 +2193,7 @@ CREATE TABLE IF NOT EXISTS `permiso` (
   `id_tipousuario` int(6) NOT NULL COMMENT 'ID Tipo de usuario',
   `id_tipooperacion` int(6) NOT NULL COMMENT 'ID Tipo Operación',
   `permitido` tinyint(1) DEFAULT NULL COMMENT 'Permitido'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -2204,7 +2204,7 @@ CREATE TABLE IF NOT EXISTS `permiso` (
 CREATE TABLE IF NOT EXISTS `tipooperacion` (
   `id` int(6) NOT NULL COMMENT 'Identificador',
   `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Descripción'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
 
 --
 --
@@ -2548,6 +2548,27 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREME
 --
 ALTER TABLE `usuario`
 MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador',AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `objeto`
+--
+ALTER TABLE `objeto`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Objeto';
+--
+-- AUTO_INCREMENT de la tabla `operacion`
+--
+ALTER TABLE `operacion`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Operación';
+--
+-- AUTO_INCREMENT de la tabla `permiso`
+--
+ALTER TABLE `permiso`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID Permiso';
+--
+-- AUTO_INCREMENT de la tabla `tipooperacion`
+--
+ALTER TABLE `tipooperacion`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador';
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
